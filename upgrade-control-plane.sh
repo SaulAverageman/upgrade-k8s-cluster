@@ -6,7 +6,7 @@ echo "upgrading kubeadm"
 apt-mark unhold kubeadm && \
 apt-get update && apt-get install -y kubeadm={NEW-K8S-VER}-00 && \
 apt-mark hold kubeadm
-sudo kubeadm upgrade apply v1.24.6
+sudo kubeadm upgrade apply v${NEW-K8S-VER}
 
 sh upgrade-kubectl-kubeadm.sh
 
