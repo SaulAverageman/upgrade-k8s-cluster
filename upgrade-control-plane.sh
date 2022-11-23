@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NEW_K8S_VER=1.25.4
+export NEW_K8S_VER=1.25.3
 
 echo "upgrading kubeadm"
 sudo apt-mark unhold kubeadm && \
