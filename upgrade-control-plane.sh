@@ -10,9 +10,9 @@ sh upgrade-kubectl-kubeadm.sh
 #upgrade nodes
 for node in $(kubectl get nodes -o name)
 do
-	kubectl cordon node
-	kubectl drain node --ignore-daemonsets
-	
-	kubectl uncordon node
+	kubectl cordon ${node}
+	kubectl drain ${node} --ignore-daemonsets
+	ssh azureuser@${node} 'bash -s' < upgrade-kubectl-kubeadm.sh
+	kubectl uncordon ${node}
 done
  
