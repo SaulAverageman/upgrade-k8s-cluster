@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NEW-K8S-VER=1.25.4
+export NEW-K8S-VER=1.25.4
 
 echo "upgrading kubectl and kubelet"
 apt-mark unhold kubelet kubectl && \
