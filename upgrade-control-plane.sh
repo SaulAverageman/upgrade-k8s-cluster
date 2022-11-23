@@ -10,6 +10,7 @@ do
 	then
 		continue
 	fi
+	echo "NODE UPDATING..."
 	kubectl cordon ${node} && \
 	kubectl drain ${node} --ignore-daemonsets && \
 	ssh azureuser@${node} 'bash -s' < upgrade-kubectl-kubeadm.sh && \
