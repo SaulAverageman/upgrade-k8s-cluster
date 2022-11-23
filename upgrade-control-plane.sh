@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export NEW_K8S_VER=1.25.3
-
 sh upgrade-kubectl-kubeadm.sh && \
 
 #upgrade nodes
