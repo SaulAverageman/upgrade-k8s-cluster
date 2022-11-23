@@ -4,9 +4,9 @@ export NEW_K8S_VER=1.25.4
 
 echo "upgrading kubeadm"
 sudo apt-mark unhold kubeadm && \
-apt-get update && apt-get install -y kubeadm={NEW_K8S_VER}-00 && \
+apt-get update && apt-get install -y kubeadm=${NEW_K8S_VER}-00 && \
 sudo apt-mark hold kubeadm && \
-sudo kubeadm upgrade apply v${NEW_K8S_VER} && \
+sudo kubeadm upgrade apply v${NEW_K8S_VER} --ignore-preflight-errors=all && \
 
 sh upgrade-kubectl-kubeadm.sh && \
 
